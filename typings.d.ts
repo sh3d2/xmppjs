@@ -9,9 +9,11 @@ declare module "xmppjs" {
     namespace xmppjs {
 
         export class Stanza {
-            s(name: string, attr: Object): Stanza;
+            name: string;
 
-            c(name: string, attr: Object): Stanza;
+            s(name: string, attr?: Object): Stanza;
+
+            c(name: string, attr?: Object): Stanza;
 
             t(text: string): Stanza;
 
@@ -36,7 +38,7 @@ declare module "xmppjs" {
 
             sendIQ(iq: Stanza, on_result: Function, on_error: Function): void;
 
-            addHandler(handler, ns: string, name: string, type: string, id: string, from: string, options: Object): number;
+            addHandler(handler: (stanza: Stanza) => void, ns: string, name: string, type: string, id: string, from: string, options?: Object): number;
 
             log(type: any, message: string): void;
         }
@@ -71,7 +73,7 @@ declare module "xmppjs" {
 
         function iq(attr: Object): Stanza;
 
-        function setLogger(logger) : void;
+        function setLogger(logger): void;
     }
     export = xmppjs;
 }
