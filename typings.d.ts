@@ -21,7 +21,7 @@ declare module "xmppjs" {
 
             toString(top_tag_only?: boolean): string;
 
-            getChild(name: string, xmlns: string): Stanza;
+            getChild(name: string, xmlns?: string): Stanza;
 
             getText(): string;
 
