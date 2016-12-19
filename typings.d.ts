@@ -32,9 +32,7 @@ declare module "xmppjs" {
 
             connect(jid: string, password: string, callback: Function): void;
 
-            send(data: {
-                toString(): string;
-            }): void;
+            send(data: Object): void;
 
             sendIQ(iq: Stanza, on_result: Function, on_error: Function): void;
 
