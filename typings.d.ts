@@ -8,7 +8,6 @@ declare module "xmppjs" {
 
     namespace xmppjs {
 
-
         export class Stanza {
             s(name: string, attr: Object): Stanza;
 
@@ -33,7 +32,9 @@ declare module "xmppjs" {
 
             connect(jid: string, password: string, callback: Function): void;
 
-            send(data: Buffer): void;
+            send(data: {
+                toString(): string;
+            }): void;
 
             sendIQ(iq: Stanza, on_result: Function, on_error: Function): void;
 
