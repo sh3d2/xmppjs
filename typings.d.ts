@@ -17,7 +17,7 @@ declare module "xmppjs" {
 
             up(): Stanza;
 
-            toString(top_tag_only: boolean): string;
+            toString(top_tag_only?: boolean): string;
 
             getChild(name: string, xmlns: string): Stanza;
 
